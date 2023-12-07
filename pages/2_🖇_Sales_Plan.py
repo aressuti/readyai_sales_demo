@@ -15,7 +15,7 @@ try:
     df_ofertas = load_data_ofertas()
 
     customers = st.selectbox(
-        "Choose the customer", list(df['Cliente'].unique())
+        "Choose the customer", list(df['Customer'].unique())
     )
 
     data = df_hist.loc[df_hist['Cliente'] == customers]
@@ -36,12 +36,12 @@ try:
     #     st.altair_chart(chart, use_container_width=True)
 
     st.markdown("## Offers")
-    df_offers = df.loc[df['Cliente'] == customers]
-    df_resultado = pd.merge(df_offers, df_ofertas, on='Oferta', how='left')
-    st.dataframe(df_resultado[['Oferta', 'Valor', 'Justificativa', 'Argumentacao']], hide_index=True)
+    df_offers = df.loc[df['Customer'] == customers]
+    df_resultado = pd.merge(df_offers, df_ofertas, on='Offer', how='left')
+    st.dataframe(df_resultado[['Offer', 'Value', 'Justification', 'Argumentation']], hide_index=True)
 
     st.markdown("## Information to Collect")
-    st.dataframe(df_resultado[['Perguntas']], hide_index=True)
+    st.dataframe(df_resultado[['Questions']], hide_index=True)
 
 except URLError as e:
     st.error(

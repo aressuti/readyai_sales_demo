@@ -27,7 +27,7 @@ try:
 
     df = st.session_state.df
 
-    edited_df = st.data_editor(df, hide_index=True, disabled=['Cliente', 'Oferta', 'Valor', 'Justificativa', 'Venda Acum', 'Prior Sugerida Cliente'],
+    edited_df = st.data_editor(df, hide_index=True, disabled=['Customer', 'Offer', 'Value', 'Justification', 'Acc Sales', 'Prior. Suggested'],
                                key=f'editor_{st.session_state.key}') # 👈 An editable dataframe
 
     col1, col2, col3, col4, col5, col6, col7, col8 = st.columns(8)
