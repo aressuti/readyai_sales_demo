@@ -24,16 +24,16 @@ try:
     st.dataframe(df_transposto, hide_index=True)
 
     # # chart = st.line_chart(resultado_agrupado, x="mes", y="Valor")
-    #     chart = (
-    #         alt.Chart(resultado_agrupado)
-    #         .mark_area(opacity=0.3)
-    #         .encode(
-    #             x="month:T",
-    #             y=alt.Y("Gross Agricultural Product ($B):Q", stack=None),
-    #             color="Region:N",
-    #         )
-    #     )
-    #     st.altair_chart(chart, use_container_width=True)
+    # chart = (
+    #     alt.Chart(resultado_agrupado)
+    #     # .mark_area(opacity=0.3)
+    #     # .encode(
+    #     #     x="mes", #"month:T",
+    #     #     y=alt.Y("Valor"), #"Gross Agricultural Product ($B):Q", stack=None),
+    #     #     color="Region:N",
+    #     # )
+    # )
+    # st.altair_chart(chart, use_container_width=True)
 
     st.markdown("## Offers")
     df_offers = df.loc[df['Customer'] == customers]
